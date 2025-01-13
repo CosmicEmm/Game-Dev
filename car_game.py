@@ -54,7 +54,7 @@ pygame.draw.rect( # right white marking
 # Apply the changes on the screen
 pygame.display.update()
 
- 
+# Event Listeners
 while running:
     for event in pygame.event.get(): # The get method fetches all the events (e.g., keyboard input, mouse clicks, window close)
         if event.type == QUIT: # QUIT: the user clicks the close button (x) to execute pygame.quit()
