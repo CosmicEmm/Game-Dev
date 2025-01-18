@@ -87,7 +87,7 @@ class Game:
     
     def event_listeners(self):
         """
-        a method a stores key controls logic
+        a method that stores key controls logic
         """
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -118,7 +118,7 @@ class Game:
             self.level_up()
             # animate enemy vehicle
             self.enemy.vehicle_rect[1] += self.enemy.speed
-            # randomize the next enemy
+            # randomize enemy appearance
             self.randomize_enemy()
             # game over logic
             if self.player.vehicle_rect.colliderect(self.enemy.vehicle_rect):
@@ -140,21 +140,21 @@ class Game:
 
 
 class Vehicle:
-    """ Vehicle Object - Parent"""
+    """ Vehicle Object --> Parent"""
     def __init__(self, img_path):
         self.vehicle = pygame.image.load(img_path)
         self.vehicle_rect = self.vehicle.get_rect()
 
 
 class PlayerVehicle(Vehicle):
-    """ Player Vehicle Object - Child"""
+    """ Player Vehicle Object --> Child"""
     def __init__(self, img_path):
         super().__init__(img_path)
         self.vehicle_rect.center = window.right_lane, window.height * 0.8
 
 
 class EnemyVehicle(Vehicle):
-    """ Enemy Vehicle Object - Child"""
+    """ Enemy Vehicle Object --> Child"""
     def __init__(self, img_path):
         super().__init__(img_path)
         self.vehicle_rect.center = window.left_lane, window.height * 0.2
