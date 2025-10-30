@@ -1,1 +1,1 @@
-print('Git Commmits are working')
+print('The game is working')
