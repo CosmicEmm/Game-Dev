@@ -1,1 +1,0 @@
-print('The game is working')
